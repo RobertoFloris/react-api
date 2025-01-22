@@ -15,6 +15,13 @@ const Posts = () => {
       })
   }
 
+  const handDeletePost = (id) => {
+    axios.delete(`${apiUrl}/posts/${id}`)
+      .then(res => {
+        fetchPosts()
+      })
+  }
+
   useEffect(() => {
     fetchPosts()
   }, [])
@@ -24,7 +31,7 @@ const Posts = () => {
       <h1 className="my-4 text-center">Gestione Post</h1>
       <div className="row g-4">
         {posts.map(post => (
-          <Cards key={post.id} post={post} />
+          <Cards key={post.id} post={post} onDelete={() => handDeletePost(post.id)} />
         ))}
       </div>
     </div>
