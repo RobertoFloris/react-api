@@ -67,7 +67,7 @@ const Posts = () => {
     <div className="container">
 
       <h1 className="my-4 text-center">Gestione Post</h1>
-      <div className="row g-4">
+      <div className="row g-4 align-items-stretch">
         {posts.map(post => (
           <Cards key={post.id} post={post} onDelete={() => handDeletePost(post.id)} />
         ))}
