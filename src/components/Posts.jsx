@@ -48,7 +48,7 @@ const Posts = () => {
 
   const handleAddPost = (e) => {
     e.preventDefault();
-    const arrayTags = formData.tags.split("#").map(item => item.trim()).filter(item => item.trim());
+    const arrayTags = formData.tags.split("#").filter(item => item.trim());
 
     const postToSend = {
       ...formData,
